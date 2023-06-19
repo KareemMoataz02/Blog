@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <h2 class="text-center">Create author account</h2>
+
+    <div class="col-6 mx-auto">
+        <form [formGroup]="authorForm" (ngSubmit)="register()">
+            <input formControlName="name" type="text" class="form-control m-1" placeholder="name">
+            <div *ngIf="authorForm.get('name')!.invalid && (authorForm.get('name')!.dirty || authorForm.get('name')!.touched)"
+                class="text-danger">Name is required.</div>
+
+            <input formControlName="lastname" type="text" class="form-control m-1" placeholder="lastname">
+            <div *ngIf="authorForm.get('lastname')!.invalid && (authorForm.get('lastname')!.dirty || authorForm.get('lastname')!.touched)"
+                class="text-danger">Lastname is required.</div>
+
+            <input formControlName="email" type="text" class="form-control m-1" placeholder="email">
+            <div *ngIf="authorForm.get('email')!.invalid && (authorForm.get('email')!.dirty || authorForm.get('email')!.touched)"
+                class="text-danger">
+                <div *ngIf="authorForm.get('email')!.errors?.['required']">Email is required.</div>
+                <div *ngIf="authorForm.get('email')!.errors?.['email']">Please enter a valid email address.</div>
+            </div>
+
+            <input formControlName="password" type="password" class="form-control m-1" placeholder="password">
+            <div *ngIf="authorForm.get('password')!.invalid && (authorForm.get('password')!.dirty || authorForm.get('password')!.touched)"
+                class="text-danger">
+                <div *ngIf="authorForm.get('password')!.errors?.['required']">Password is required.</div>
+                <div *ngIf="authorForm.get('password')!.errors?.['minlength']">Password must be at least 6 characters
+                    long.</div>
+            </div>
+
+            <input type="file" (change)="select($event)" class="form-control m-1" placeholder="image">
+
+            <textarea formControlName="about" cols="30" rows="4" placeholder="about"
+                class="form-control m-1"></textarea>
+            <div *ngIf="authorForm.get('about')!.invalid && (authorForm.get('about')!.dirty || authorForm.get('about')!.touched)"
+                class="text-danger">About section exceeds maximum length.</div>
+
+            <div *ngIf="isEmailExists" class="text-danger">Email already exists. Please choose a different email.</div>
+
+            <button type="submit" class="btn btn-dark form-control m-1"
+                [disabled]="authorForm.invalid">Register</button>
+        </form>
+    </div>
+</div>
