@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Author = mongoose.model('Author', {
     name: {
         type: String,

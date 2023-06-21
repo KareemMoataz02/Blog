@@ -13,6 +13,7 @@ export class DataService {
 
   url = 'http://localhost:3000/article/';
   urlAuthor = 'http://localhost:3000/author/';
+  urlNodeMailer = 'http://localhost:3000/newsletter/';
 
   createArticle(article: any) {
     return this.http.post(this.url + 'add', article)
@@ -34,5 +35,10 @@ export class DataService {
   getAuthorFullName(id: any): Observable<{ name: string, lastname: string }> {
     const url = `${this.urlAuthor}/getFullName/${id}`;
     return this.http.get<{ name: string, lastname: string }>(url);
+  }
+
+  newsLetter(email: any) {
+    const payload = { email: email };
+    return this.http.post(this.urlNodeMailer + 'subscribe', payload);
   }
 }

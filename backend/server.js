@@ -1,6 +1,7 @@
 const express = require('express');
 const articleApi = require('./routes/article');
 const authorApi = require('./routes/author');
+const newsletterApi = require('./routes/newsletter');
 const req = require('express/lib/request');
 const app = express();
 const cors = require('cors');
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/article', articleApi);
 app.use('/author', authorApi);
+app.use('/newsletter', newsletterApi);
 app.use('/getimage', express.static('./uploads'));
 
 
