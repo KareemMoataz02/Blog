@@ -1,5 +1,5 @@
 buildCommand: |
   npm install -g @angular/cli
   npm install
-  ng build --prod
+  npx ng build --prod
 publishDirectory: dist/build
