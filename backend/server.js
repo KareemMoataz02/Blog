@@ -23,9 +23,7 @@ const connectDB = async () => {
 
 connectDB(); // Call the connectDB function to establish the database connection
 
-app.use(cors(
-  { origin : 'https://blog-gamma-one-30.vercel.app/' }
-));
+app.use(cors());
 
 app.use(express.json());
 app.use('/article', articleApi);
