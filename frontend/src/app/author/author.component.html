@@ -4,7 +4,8 @@
             <div class="col-lg-10">
                 <div class="row g-4 g-lg-5 text-center text-lg-start justify-content-center justify-content-lg-start">
                     <div class="col-lg-3 col-md-4 col-sm-5 col-6">
-                        <img class="img-fluid rounded" [src]="'http://localhost:3000/getimage/' + author.image"
+                        <img class="img-fluid rounded"
+                            [src]="'https://blog-backend-service.onrender.com/getimage/' + author.image"
                             alt="Thomas Macaulay" width="250" height="250">
                     </div>
                     <div class="col-lg-9 col-md-12">
@@ -31,7 +32,8 @@
                     <a class="d-block" [routerLink]="['/article' , item._id]"
                         title="The AGI hype train is running out of steam">
                         <div class="post-image position-relative">
-                            <img class="w-100 h-auto rounded" [src]="'http://localhost:3000/getimage/' + item.image"
+                            <img class="w-100 h-auto rounded"
+                                [src]="'https://blog-backend-service.onrender.com/getimage/' + item.image"
                                 alt="The AGI hype train is running out of steam" width="970" height="500">
                         </div>
                     </a>
@@ -53,8 +55,9 @@
                     <ul class="card-meta list-inline">
                         <li class="list-inline-item mt-2">
                             <a class="card-meta-author" title="Read all posts by - ">
-                                <img class="w-auto" [src]="'http://localhost:3000/getimage/' + author.image" width="26"
-                                    height="26"> by <span>{{author.name + ' '+ author.lastname}}</span>
+                                <img class="w-auto"
+                                    [src]="'https://blog-backend-service.onrender.com/getimage/' + author.image"
+                                    width="26" height="26"> by <span>{{author.name + ' '+ author.lastname}}</span>
                             </a>
                         </li>
                         <li class="list-inline-item mt-2">•</li>
