@@ -8,7 +8,11 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  private url = 'http://localhost:3000/author/';
+
+  // private url = 'http://localhost:3000/author/';
+
+  private url = 'https://blog-backend-service.onrender.com/author/';
+
 
   register(author: any) {
     return this.http.post(this.url + 'register', author)
