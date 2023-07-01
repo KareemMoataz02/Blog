@@ -24,7 +24,7 @@ const connectDB = async () => {
 connectDB(); // Call the connectDB function to establish the database connection
 
 app.use(cors(
-  { origin : 'https://blog-b8q5jbvg0-kareemmoataz02.vercel.app' }
+  { origin : 'https://blog-gamma-one-30.vercel.app/' }
 ));
 
 app.use(express.json());
