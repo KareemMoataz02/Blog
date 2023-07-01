@@ -11,13 +11,13 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  // url = 'http://localhost:3000/article/';
-  // urlAuthor = 'http://localhost:3000/author/';
-  // urlNodeMailer = 'http://localhost:3000/newsletter/';
+  url = 'http://localhost:3000/article/';
+  urlAuthor = 'http://localhost:3000/author/';
+  urlNodeMailer = 'http://localhost:3000/newsletter/';
 
-  url = 'https://blog-backend-service.onrender.com/article/';
-  urlAuthor = 'https://blog-backend-service.onrender.com/author/';
-  urlNodeMailer = 'https://blog-backend-service.onrender.com/newsletter/';
+  // url = 'https://blog-backend-service.onrender.com/article/';
+  // urlAuthor = 'https://blog-backend-service.onrender.com/author/';
+  // urlNodeMailer = 'https://blog-backend-service.onrender.com/newsletter/';
 
   createArticle(article: any) {
     return this.http.post(this.url + 'add', article)
