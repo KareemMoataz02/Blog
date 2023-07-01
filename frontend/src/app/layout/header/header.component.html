@@ -9,11 +9,6 @@
             <img class="img-fluid" width="110" height="35" src="assets/assets/images/logoblack.png" alt="Qurno">
           </a>
 
-          <!-- <button class="search-toggle d-inline-block d-lg-none ms-auto me-1 me-sm-3" data-toggle="search"
-            aria-label="Search Toggle">
-            <span>Search</span> -->
-
-
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHeader"
             aria-controls="navHeader" aria-expanded="false" aria-label="Toggle navigation">
             <i class="ti ti-menu-2 d-inline"></i>
@@ -23,29 +18,29 @@
           <div class="collapse navbar-collapse" id="navHeader">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/home']">Home</a>
+                <a class="nav-link" [routerLink]="['/home']" (click)="closeMenu()">Home</a>
               </li>
               <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/about']">About</a>
+                <a class="nav-link" [routerLink]="['/about']" (click)="closeMenu()">About</a>
               </li>
               <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/privacy']">Privacy</a>
+                <a class="nav-link" [routerLink]="['/privacy']" (click)="closeMenu()">Privacy</a>
               </li>
               <li class="nav-item" *ngIf="_auth.isLoggedIn()" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/author', _auth.getDataFromToken()._id]">My Account</a>
+                <a class="nav-link" [routerLink]="['/author', _auth.getDataFromToken()._id]" (click)="closeMenu()">My
+                  Account</a>
               </li>
               <li class="nav-item" *ngIf="!_auth.isLoggedIn()" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/register']">Register</a>
+                <a class="nav-link" [routerLink]="['/register']" (click)="closeMenu()">Register</a>
               </li>
               <li class="nav-item" *ngIf="!_auth.isLoggedIn()" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/login']">Log in</a>
+                <a class="nav-link" [routerLink]="['/login']" (click)="closeMenu()">Log in</a>
               </li>
               <li class="nav-item" *ngIf="_auth.isLoggedIn()" routerLinkActive="active">
-                <a class="nav-link" (click)="logout()">Log out</a>
+                <a class="nav-link" (click)="logout(); closeMenu()">Log out</a>
               </li>
             </ul>
           </div>
-
         </nav>
       </div>
     </div>

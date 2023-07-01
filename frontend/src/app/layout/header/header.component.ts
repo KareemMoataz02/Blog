@@ -19,4 +19,11 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
+
+  closeMenu() {
+    const navbar = document.querySelector('.navbar-collapse');
+    if (navbar && navbar.classList.contains('show')) {
+      navbar.classList.remove('show');
+    }
+  }
 }
